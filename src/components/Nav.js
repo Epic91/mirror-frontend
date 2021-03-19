@@ -4,7 +4,7 @@ const Nav = ()=> {
     return(
         <nav>
             <h3>Logo</h3>
-            <ul>
+            <ul className="nav-links">
                 <li>Home</li>
                 <li>Calendar</li>
                 <li>Entries</li>
