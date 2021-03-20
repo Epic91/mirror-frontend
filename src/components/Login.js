@@ -1,9 +1,14 @@
 import React from 'react'
 import '../CSS/Login.css';
+import { Link } from 'react-router-dom'
+
 
 class Login extends React.Component{
     render(){
         return(
+            <div className="login-container">
+                <h1 className="mirror-header">MIRЯOR</h1>
+                
             <form className="login-form">
                 <h1 className="sign-in-header"> Sign in</h1>
                 <label>
@@ -16,8 +21,17 @@ class Login extends React.Component{
                 </label>
                 <div>
                     <button type="submit">Login</button>
-                </div>
+            </div>
             </form>
+
+            <div className="signup-link">
+                <Link to="/signup">
+                    <li >
+                        Create an account
+                    </li>
+                </Link>
+            </div>
+            </div>
         )
     }
 }
