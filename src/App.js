@@ -19,6 +19,7 @@ function App() {
         <Route path="/" exact component={Home}/>
         <Route path="/calendar" component={Calendar}/>
         <Route path="/entries" component={Entries}/>
+        <Route exact path="/entries/:id" component={Entries}/>
         <Route path="/Highlights" component={Highlights}/>
         <Route path="/login" component={Login}/>
         <Route path="/signup" component={SignUp}/>
