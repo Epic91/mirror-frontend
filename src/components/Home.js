@@ -4,6 +4,20 @@ import { Container } from 'semantic-ui-react';
 
 
 class Home extends React.Component{
+    constructor(){
+        super()
+        this.state={
+            quotes: []
+        }
+    }
+
+    componentDidMount(){
+        fetch("https://type.fit/api/quotes")
+        .then(resp => resp.json())
+        .then(data => {
+            console.log(data, 'data')
+        })
+    }
 
     render(){
         return(

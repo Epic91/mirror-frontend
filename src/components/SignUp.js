@@ -16,12 +16,42 @@ class SignUp extends React.Component{
         })
     }
 
+    handleSubmit = e => {
+        e.preventDefault()
+
+        const reqObj = {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body:  JSON.stringify(this.state)
+          }
+          
+          fetch('http://localhost:3000/api/v1/auth', reqObj)
+          .then(resp => resp.json())
+          .then(data => {
+              if (data.error){
+                  alert(data.error)
+              } else {
+                  console.log('something')
+
+                  }
+              }
+            )
+        }
+
+        // Things to do:
+        //  -Need to somehow tell the backend that only when a user is signing up they need to use the email attribute
+        //  -Render the users dashboard
+    
+
+
     render(){
         return(
             <div className="login-container">
                 <h1 className="mirror-header">MIRЯOR</h1>
                 
-            <form className="login-form">
+            <form className="login-form" handleSubmit={this.handleSubmit}>
                 <h1 className="sign-in-header"> Sign Up</h1>
                 <label>
                     <p>Email:</p>
