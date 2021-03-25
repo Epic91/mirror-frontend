@@ -35,13 +35,12 @@ class Login extends React.Component{
                   alert(data.error)
               } else {
                   console.log('something')
-
+                  //Things to do:
+                  //  -I need to figure out how to load the dashboard using react
                   }
               }
             )
         }
-        //Things to do:
-        //  -I need to figure out how to load the dashboard using react
         
         render(){
             return(

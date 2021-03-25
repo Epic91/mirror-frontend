@@ -1,7 +1,5 @@
 import React from 'react'
 
-
-
 class EntryForm extends React.Component{
     constructor(){
         super()
@@ -32,8 +30,30 @@ class EntryForm extends React.Component{
 
         handleSubmit = e => {
             e.preventDefault();
-            
-        }
+
+            const reqObj = {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body:  JSON.stringify(this.state)
+              }
+              
+              fetch('http://localhost:3000/entries', reqObj)
+              .then(resp => resp.json())
+              .then(data => {
+                  if (data.error){
+                      alert(data.error)
+                  } else {
+                    alert("Your entry has been submitted :)");
+                      }
+                  }
+                )
+            }
+            // Need to work on errors 
+            // The data isnt going to the db
+            // Need to update the database
+            // Need to style
 
         render() {
         return (
@@ -65,8 +85,7 @@ class EntryForm extends React.Component{
                 <div className="prompt-drop-down">
                     <p>Prompts:</p>
                     <select>{this.state.prompts.map((obj) => {
-                        return <option value={obj.id}>{obj.question}</option>
-                    })
+                        return <option value={obj.id}>{obj.question}</option>})
                     }</select>
                 </div>
 
@@ -77,7 +96,12 @@ class EntryForm extends React.Component{
                     name='body'
                     onChange={this.myChangeHandler}
                     />
-                </div>     
+                </div>
+
+                <button 
+                className='entry-submit-button'
+                type='submit' 
+                handleSubmit={this.handleSubmit}>Submit</button>     
             </form>
             )
         }
