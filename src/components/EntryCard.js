@@ -3,18 +3,17 @@ import { Table } from 'semantic-ui-react'
 
 class EntryCard extends React.Component{
 
-    // handleDelete = () => {
-    //     const reqObj = {
-    //       method: 'DELETE',
-    //     }
+    handleDelete = () => {
+        const reqObj = {
+          method: 'DELETE',
+        }
     
-        
-    //     fetch(`http://localhost:3000/entries/${this.props.entry.id}`, reqObj)
-    //     .then(resp => resp.json()) 
-    //     .then(data => {
-    //       this.props.deleteEntry(this.props.entry.id)
-    //     })
-    //   }
+        fetch(`http://localhost:3000/entries/${this.props.entry.id}`, reqObj)
+        .then(resp => resp.json()) 
+        .then(data => {
+          this.props.deleteEntry(this.props.entry.id)
+        })
+      }
 
     render(){
         const {subject, date} = this.props.entry
@@ -35,9 +34,22 @@ class EntryCard extends React.Component{
                         <Table.Cell>{subject}</Table.Cell>
                         <Table.Cell>{date}</Table.Cell>
                         <Table.Cell>
-                            {/* Todo:
-                                    -Need to create a button or link to view, edit or delete each entry */}
-                            {/* <button className="delete-entry" onClick={this.handleDelete}>Delete</button> */}
+                            <button
+                            className='view-button'
+                            onClick={console.log('view button')}
+                            >View</button>
+
+                            <button
+                            className='delete-button'
+                            onClick={this.handleDelete}
+                            >Delete</button>
+
+                            <button
+                            className='edit-button'
+                            onClick={console.log('edit button')}
+                            >Edit</button>
+                            {/* onclick get clicked automatically on refresh */}
+                            
                         </Table.Cell>
                     </Table.Row>
                     </Table.Body>
@@ -48,3 +60,10 @@ class EntryCard extends React.Component{
 }
 
 export default EntryCard;
+
+// To do:
+// Table header needs to be singular
+// event handler for view and edit button
+// Automatic click needs to be fixed
+// SIDENOTE:
+// Might need to create own tabel and not semantic

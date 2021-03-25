@@ -1,11 +1,17 @@
 import React from 'react'
+// import { Segment } from 'semantic-ui-react'
 
-class Highlights extends React.Component{
-    render(){
-        return(
-            <h1>This is the Highlights Page</h1>
-        )
-    }
+
+const Highlights = (props) => {    
+    return(
+        <div>
+            {
+                console.log(props.highlight)
+            }
+
+        </div>
+    )
+
 }
 
 export default Highlights;

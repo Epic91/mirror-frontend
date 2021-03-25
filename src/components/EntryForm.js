@@ -52,6 +52,7 @@ class EntryForm extends React.Component{
             }
             // Need to work on errors 
             // The data isnt going to the db
+            //Clear the form
             // Need to update the database
             // Need to style
 
@@ -85,7 +86,7 @@ class EntryForm extends React.Component{
                 <div className="prompt-drop-down">
                     <p>Prompts:</p>
                     <select>{this.state.prompts.map((obj) => {
-                        return <option value={obj.id}>{obj.question}</option>})
+                        return <option key={obj.id}>{obj.question}</option>})
                     }</select>
                 </div>
 

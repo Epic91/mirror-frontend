@@ -1,5 +1,6 @@
 import React from 'react'
 import EntryContainer from '../containers/EntryContainer'
+// import Highlights from './Highlights'
 
 
 class Entries extends React.Component{
@@ -21,35 +22,42 @@ class Entries extends React.Component{
         })
     }
 
-    // updateEntry = (updatedEntry) => {
-    //     const updatedEntries = this.state.entries.map(entryObj => {
-    //       if (entryObj.id === updatedEntry.id) {
-    //         return updatedEntry
-    //       } else {
-    //         return entryObj
-    //       }
-    //     })
+    addEntry = (newEntry) => {
+        this.setState({
+            entries: [...this.state.entries, newEntry]
+          })
+    }
+
+    updateEntry = (updatedEntry) => {
+        const updatedEntries = this.state.toys.map(entryObj => {
+          if (entryObj.id === updatedEntry.id) {
+            return updatedEntry
+          } else {
+            return entryObj
+          }
+        })
     
-    //     this.setState({
-    //       toys: updatedEntries
-    //     })
-    //   }
+        this.setState({
+          entries: updatedEntries
+        })
+      }
+
+      deleteEntry = (id) => {
+        const updatedEntries = this.state.entries.filter(e => e.id !== id )
     
-    //   deleteEntry = (id) => {
-    //     const updatedEntries = this.state.entries.filter(e => e.id !== id )
-    
-    //     this.setState({
-    //       entries: updatedEntries
-    //     })
-    //   }
+        this.setState({
+          toys: updatedEntries
+        })
+      }
 
     render(){
         return(
-            <EntryContainer entries={this.state.entries} />
-                // {/* deleteEntry={this.deleteEntry} */}
-            )
-        }
+        <>
+        <EntryContainer entries={this.state.entries} updateEntry={this.updateEntry} deleteEntry={this.deleteEntry} />
+        </>
+        )
     }
+}
 
 export default Entries;
 // Render the entries from the backend here:
