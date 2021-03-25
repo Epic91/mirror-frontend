@@ -64,6 +64,7 @@ export default EntryCard;
 // To do:
 // Table header needs to be singular
 // event handler for view and edit button
+// Delete button doesnt delete
 // Automatic click needs to be fixed
 // SIDENOTE:
 // Might need to create own tabel and not semantic
