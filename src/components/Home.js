@@ -1,37 +1,20 @@
 import React from 'react';
 // import '../CSS/Home.css';
 import styled from 'styled-components'
-import Quotes from './Quotes'
 import Entries from './Entries'
+import YouTube from './YouTube'
 
 function Home (){
     return(
         <Container>
-            <h1>Welcome User!</h1>
+            <h2>Welcome User!</h2>
             <Main>
-                <Quotes/>
+                <YouTube />
                 <Entries />
             </Main>
         </Container>
     )
 }
-    // constructor(){
-    //     super()
-    //     this.state={
-    //         quotes: []
-    //     }
-    // }
-
-    // componentDidMount(){
-    //     fetch("https://type.fit/api/quotes")
-    //     .then(resp => resp.json())
-    //     .then(data => {
-    //         console.log(data, 'data')
-    //     })
-    // }
-
-    // render(){
-
 
 export default Home;
 
@@ -45,6 +28,6 @@ const Container = styled.div`
 
 const Main = styled.div`
     display: grid;
-    grid-template-columns: 450px auto;
-    background-color: HoneyDew;
+    grid-template-columns: 800px auto;
+    background-color: white;
 `

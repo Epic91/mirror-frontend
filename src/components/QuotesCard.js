@@ -1,11 +1,13 @@
 import React from 'react'
 
-function Quotes() {
+function QuotesCard() {
     return (
         <div>
-            
+            Hello
+
         </div>
     )
 }
 
-export default Quotes
+export default QuotesCard;
+
