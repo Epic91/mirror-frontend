@@ -5,7 +5,7 @@ import '../CSS/Nav.css'
 const Nav = ()=> {
 
     const navstyle={
-        color: 'white'
+        color: 'black'
     }
 
     return(

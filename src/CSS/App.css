@@ -1,13 +1,14 @@
-/* .App{
-    text-align: center;
-} */
+
+*{
+    margin: 0;
+}
 
 nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
     min-height: 10vh;
-    background-color: rgb(81, 91, 100);
+    background-color:Gainsboro;
     color: white;
 }
 
