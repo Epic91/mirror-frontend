@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import '../CSS/Nav.css'
 
 const Nav = ()=> {
 
@@ -9,11 +10,10 @@ const Nav = ()=> {
 
     return(
         <nav>
-            <h3>Logo</h3>
+            <Link to='/' style={navstyle}>
+            <h3 className='Mirror-logo'>MIRЯOR</h3>
+            </Link>
             <ul className="nav-links">
-                <Link to="/" style={navstyle}>
-                    <li>Home</li>
-                </Link>
                 <Link to="/calendar" style={navstyle}>
                     <li>Calendar</li>
                 </Link>
