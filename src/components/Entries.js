@@ -1,5 +1,5 @@
 import React from 'react'
-import { Table } from 'semantic-ui-react'
+import EntryContainer from '../containers/EntryContainer'
 
 
 class Entries extends React.Component{
@@ -13,23 +13,47 @@ class Entries extends React.Component{
     componentDidMount(){
         fetch('http://localhost:3000/entries')
         .then(resp => resp.json())
-        .then(data => {
-            console.log('data', data)
-            // iterate through the data and display a card
+        .then(entries => {
+            // console.log('entries', entries)
+            this.setState({
+                entries: entries
+            })
         })
     }
-    render(){
-        
-        return(
-            <h1>This is the Entries Page</h1>
 
-            // Render the entries from the backend here:
-            // Display all the entries with subject and date.
-            // Each entry should have a view edit and delete link
-            // Filter:
-            //  -
-        )
+    // updateEntry = (updatedEntry) => {
+    //     const updatedEntries = this.state.entries.map(entryObj => {
+    //       if (entryObj.id === updatedEntry.id) {
+    //         return updatedEntry
+    //       } else {
+    //         return entryObj
+    //       }
+    //     })
+    
+    //     this.setState({
+    //       toys: updatedEntries
+    //     })
+    //   }
+    
+    //   deleteEntry = (id) => {
+    //     const updatedEntries = this.state.entries.filter(e => e.id !== id )
+    
+    //     this.setState({
+    //       entries: updatedEntries
+    //     })
+    //   }
+
+    render(){
+        return(
+            <EntryContainer entries={this.state.entries} />
+                // {/* deleteEntry={this.deleteEntry} */}
+            )
+        }
     }
-}
 
 export default Entries;
+// Render the entries from the backend here:
+// Display all the entries with subject and date.
+// Each entry should have a view edit and delete link
+// Filter:
+//  -

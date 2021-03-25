@@ -9,6 +9,7 @@ import Highlights from './components/Highlights';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Home from './components/Home';
+import EntryForm from './components/EntryForm'
 
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" exact component={Home}/>
         <Route path="/calendar" component={Cal}/>
         <Route path="/entries" component={Entries}/>
+        <Route path="/entryform" component={EntryForm} />
         <Route exact path="/entries/:id" component={Entries}/>
         <Route path="/Highlights" component={Highlights}/>
         <Route path="/login" component={Login}/>

@@ -23,7 +23,7 @@ const Nav = ()=> {
                 <Link to="/highlights" style={navstyle}>
                     <li>Highlights</li>
                 </Link>
-                <Link to="entries" style={navstyle}>
+                <Link to="/entryform" style={navstyle}>
                     <li>New Entry</li>
                 </Link>
                 <Link to="/login" style={navstyle}>
