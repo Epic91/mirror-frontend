@@ -17,7 +17,7 @@ class QuotesContainer extends React.Component{
 
     render(){
         return (
-            <Container>
+        <Container>
             <QuotesCard />
         </Container>
         )
@@ -27,5 +27,6 @@ class QuotesContainer extends React.Component{
 export default QuotesContainer
 
 const Container = styled.div`
+
 `
 

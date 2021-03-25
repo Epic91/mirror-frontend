@@ -1,15 +1,15 @@
 import React from 'react';
-import './CSS/App.css';
+import '../CSS/App.css';
 import 'semantic-ui-css/semantic.min.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Nav from './components/Nav';
-import Cal from './components/Cal';
-import Entries from './components/Entries';
-import Highlights from './components/Highlights';
-import Login from './components/Login';
-import SignUp from './components/SignUp';
-import Home from './components/Home';
-import EntryForm from './components/EntryForm'
+import Nav from './Nav';
+import Cal from './Cal';
+import Entries from './Entries';
+import Highlights from './Highlights';
+import Login from './Login';
+import SignUp from './SignUp';
+import Home from './Home';
+import EntryForm from './EntryForm'
 
 
 
