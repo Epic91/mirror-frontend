@@ -8,8 +8,8 @@ class Login extends React.Component{
     constructor(){
         super()
         this.state = {
-            username: 'evher',
-            password: 'evher123'
+            username: '',
+            password: ''
         }
     }
 
@@ -33,16 +33,21 @@ class Login extends React.Component{
           fetch('http://localhost:3000/api/v1/auth', reqObj)
           .then(resp => resp.json())
           .then(data => {
-            //   console.log('data', data)
               if (data.error){
                   alert(data.error)
               } else {
-                  this.props.loginSuccess()
-                  //dispatch something here
+                  this.props.loginSuccess(data)
+                  this.setState({
+                      username: '',
+                      password: ''
+                  })
+                  this.props.history.push('/home')
+                }
 
-                  }
-              }
-            )
+
+
+
+              })
         }
         
         render(){

@@ -1,8 +1,9 @@
 
 
-export const loginSuccess = () => {
+export const loginSuccess = (user) => {
     return{
-        type: 'LOGIN_SUCCESS'
+        type: 'LOGIN_SUCCESS',
+        user: user
     }
 
 }
