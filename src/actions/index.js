@@ -5,5 +5,11 @@ export const loginSuccess = (user) => {
         type: 'LOGIN_SUCCESS',
         user: user
     }
+}
 
+export const currentUser = (user) => {
+    return{
+        type: 'CURRENT_USER',
+        user: user
+    }
 }

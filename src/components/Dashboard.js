@@ -6,12 +6,6 @@ import YouTube from './YouTube'
 import { connect } from 'react-redux'
 
 class Dashboard extends React.Component{
-    componentDidMount(){
-        if(!this.props.auth){
-            this.props.history.push('/login')
-        }
-    }
-
     render(){
     return(
         <Container>
