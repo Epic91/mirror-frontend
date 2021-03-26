@@ -1,5 +1,7 @@
 import React from 'react'
 import EntryContainer from '../containers/EntryContainer'
+import EntryForm from './EntryForm'
+
 // import Highlights from './Highlights'
 
 
@@ -23,9 +25,9 @@ class Entries extends React.Component{
     }
 
     addEntry = (newEntry) => {
-        this.setState({
-            entries: [...this.state.entries, newEntry]
-          })
+      this.setState({
+        entries: [...this.state.entries, newEntry]
+      })
     }
 
     updateEntry = (updatedEntry) => {
@@ -52,9 +54,10 @@ class Entries extends React.Component{
 
     render(){
         return(
-        <>
-        <EntryContainer entries={this.state.entries} updateEntry={this.updateEntry} deleteEntry={this.deleteEntry} />
-        </>
+        <div className="entries">
+          <EntryContainer entries={this.state.entries} />
+          <EntryForm addEntry={this.addEntry}/>
+        </div>
         )
     }
 }
@@ -65,3 +68,4 @@ export default Entries;
 // Each entry should have a view edit and delete link
 // Filter:
 //  -
+// updateEntry={this.updateEntry} deleteEntry={this.deleteEntry}

@@ -82,7 +82,7 @@ class Login extends React.Component{
                     />
                 </label>
                 <div>
-                    <button 
+                    <button className="login-button"
                     type="submit"
                     onSubmit={this.handleSubmit}
                     >Login</button>

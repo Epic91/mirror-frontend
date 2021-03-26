@@ -1,16 +1,24 @@
 import EntryCard from '../components/EntryCard'
 import React from 'react'
 
-const EntryContainer = (props) => {
-    return(
-      <div id="entry-collection">
-      {
-        props.entries.map(entry => {
-          return <EntryCard key={entry.id} entry={entry} updateEntry={props.updateEntry} deleteEntry={props.deleteEntry} />
-        })
-      }
-      </div>
-    );
+class EntryContainer extends React.Component{
+  render(){
+
+    const renderEntries = () => {
+      return this.props.entries.map(entry => {
+        return <EntryCard key={entry.id} entry={entry} />
+    })
   }
   
-  export default EntryContainer;
+  return(
+    <div className="entry-container">
+      {
+        renderEntries()
+      }
+    </div>
+    );
+  }
+}
+
+export default EntryContainer;
+/* updateEntry={props.updateEntry} deleteEntry={props.deleteEntry} */
