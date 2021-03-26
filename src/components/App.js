@@ -8,7 +8,7 @@ import Entries from './Entries';
 import Highlights from './Highlights';
 import Login from './Login';
 import SignUp from './SignUp';
-import Home from './Home';
+import Dashboard from './Dashboard';
 import EntryForm from './EntryForm'
 
 
@@ -22,7 +22,7 @@ function App() {
         {/* <Route path="/" exact component={Login}/> */}
         {/* Make login first page the user sees */}
         <Route path="/login" exact component={Login}/>
-        <Route path="/home" exact component={Home}/>
+        <Route path="/dashboard" exact component={Dashboard}/>
         <Route path="/calendar" component={Cal}/>
         <Route path="/entries" component={Entries}/>
         <Route path="/entryform" component={EntryForm} />

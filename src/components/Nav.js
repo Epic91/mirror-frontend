@@ -10,7 +10,7 @@ const Nav = ()=> {
 
     return(
         <nav>
-            <Link to='/' style={navstyle}>
+            <Link to='/dashboard' style={navstyle}>
             <h3 className='Mirror-logo'>MIRЯOR</h3>
             </Link>
             <ul className="nav-links">

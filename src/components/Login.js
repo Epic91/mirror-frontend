@@ -9,7 +9,8 @@ class Login extends React.Component{
         super()
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            error: ''
         }
     }
 
@@ -34,30 +35,28 @@ class Login extends React.Component{
           .then(resp => resp.json())
           .then(data => {
               if (data.error){
-                  alert(data.error)
+                  this.setState({
+                      error: data.error 
+                  })
               } else {
                   this.props.loginSuccess(data)
                   this.setState({
                       username: '',
                       password: ''
                   })
-                  this.props.history.push('/home')
+                  this.props.history.push('/dashboard')
                 }
-
-
-
-
               })
         }
         
         render(){
-            console.log(this.props, '------')
             return(
                 <div className="login-container">
                 <h1 className="mirror-header">MIRЯOR</h1>
 
             <form className="login-form" onSubmit={this.handleSubmit}>
                 <h1 className="sign-in-header"> Sign in</h1>
+                {this.state.error ? <h4 style={{color: 'red'}}>{this.state.error}</h4> : null}
                 <label>
                     <p>Username:</p>
                     <input 
