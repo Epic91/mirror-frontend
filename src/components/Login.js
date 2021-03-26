@@ -1,6 +1,8 @@
 import React from 'react'
 import '../CSS/Login.css';
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { loginSuccess } from '../actions/index'
 
 class Login extends React.Component{
     constructor(){
@@ -31,18 +33,20 @@ class Login extends React.Component{
           fetch('http://localhost:3000/api/v1/auth', reqObj)
           .then(resp => resp.json())
           .then(data => {
+            //   console.log('data', data)
               if (data.error){
                   alert(data.error)
               } else {
-                  console.log('something')
-                  //Things to do:
-                  //  -I need to figure out how to load the dashboard using react
+                  this.props.loginSuccess()
+                  //dispatch something here
+
                   }
               }
             )
         }
         
         render(){
+            console.log(this.props, '------')
             return(
                 <div className="login-container">
                 <h1 className="mirror-header">MIRЯOR</h1>
@@ -89,7 +93,11 @@ class Login extends React.Component{
     }
 }
 
-export default Login;
+const mapDispatchToProps = {
+    loginSuccess: loginSuccess
+}
+
+export default connect(null, mapDispatchToProps)(Login)
 //  Successful login:
 //      -Update the backend
 //      -Clear the form 

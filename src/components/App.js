@@ -8,7 +8,7 @@ import Entries from './Entries';
 import Highlights from './Highlights';
 import Login from './Login';
 import SignUp from './SignUp';
-import Home from './Home';
+// import Home from './Home';
 import EntryForm from './EntryForm'
 
 
@@ -19,13 +19,14 @@ function App() {
       <div className="App">
         <Nav />
         <Switch>
-        <Route path="/" exact component={Home}/>
+        {/* <Route path="/" exact component={Login}/> */}
+        {/* Make login first page the user sees */}
+        <Route path="/login" exact component={Login}/>
         <Route path="/calendar" component={Cal}/>
         <Route path="/entries" component={Entries}/>
         <Route path="/entryform" component={EntryForm} />
         <Route exact path="/entries/:id" component={Entries}/>
         <Route path="/Highlights" component={Highlights}/>
-        <Route path="/login" component={Login}/>
         <Route path="/signup" component={SignUp}/>
         </Switch>
       </div>
