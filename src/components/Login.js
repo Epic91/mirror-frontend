@@ -8,8 +8,8 @@ class Login extends React.Component{
     constructor(){
         super()
         this.state = {
-            username: '',
-            password: '',
+            username: 'evher',
+            password: 'evher123',
             error: ''
         }
     }
@@ -30,20 +30,24 @@ class Login extends React.Component{
             },
             body:  JSON.stringify(this.state)
           }
+
+          this.setState({
+            username: '',
+            password: ''
+        })
           
           fetch('http://localhost:3000/api/v1/auth', reqObj)
           .then(resp => resp.json())
           .then(data => {
+            //   console.log(data, '-----logged in')
               if (data.error){
                   this.setState({
                       error: data.error 
                   })
               } else {
-                  this.props.loginSuccess(data)
-                  this.setState({
-                      username: '',
-                      password: ''
-                  })
+                  this.props.loginSuccess(data.user)
+                  localStorage.setItem('token', data.token)
+                   
                   this.props.history.push('/dashboard')
                 }
               })

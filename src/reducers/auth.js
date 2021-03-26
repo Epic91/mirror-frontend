@@ -1,7 +1,10 @@
 const auth = (state = null , action) => {
     switch(action.type){
         case 'LOGIN_SUCCESS':
-            return action.user
+            return {
+                id: action.user.id,
+                username: action.user.username
+            }
         default:
             return state
     }
