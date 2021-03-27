@@ -10,7 +10,7 @@ import Highlights from './Highlights';
 import SignUp from './SignUp';
 import EntryForm from './EntryForm'
 import '../CSS/App.css';
-import 'semantic-ui-css/semantic.min.css'
+// import 'semantic-ui-css/semantic.min.css'
 // import { currentUser } from '../actions/index';
 // import { connect } from 'react-redux'
 
@@ -31,7 +31,7 @@ class App extends React.Component{
           <Route path="/signup" component={SignUp}/>
           </Switch>
         </div>
-      </Router>
+      </Router> 
     );
   }
 }

@@ -2,6 +2,8 @@ import React from 'react'
 import ReactPlayer from "react-player"
 import styled from 'styled-components'
 import QuotesContainer from '../containers/QuotesContainer'
+import '../CSS/Youtube.css';
+
 
 
 

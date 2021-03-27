@@ -3,11 +3,13 @@ import styled from 'styled-components'
 import Entries from './Entries'
 import YouTube from './YouTube'
 import { connect } from 'react-redux'
+import '../CSS/Dashboard.css';
+
 
 class Dashboard extends React.Component{
     componentDidMount(){
-         if(!this.props.auth){
-             this.props.history.push('/login')
+         if (!this.props.auth){
+             this.props.history.push('/')
             }
         }
 

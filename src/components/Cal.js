@@ -1,15 +1,21 @@
-import React from 'react'
-import '../CSS/Cal.css'
+import React, { useState } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import '../CSS/App.css';
 
-class Cal extends React.Component{
-    render(){
 
-        return(
-            <div className="calendar=container">
-                <h1>Calendar</h1>
-            </div>
-        )
-    }
+
+function Cal() {
+  const [value, onChange] = useState(new Date());
+
+  return (
+    <div className="Calendar">
+      <Calendar
+        onChange={onChange}
+        value={value}
+      />
+    </div>
+  );
 }
 
 export default Cal;

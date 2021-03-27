@@ -1,6 +1,8 @@
 import React from 'react'
 import EntryContainer from '../containers/EntryContainer'
 import EntryForm from './EntryForm'
+import '../CSS/Entries.css';
+
 
 // import Highlights from './Highlights'
 
