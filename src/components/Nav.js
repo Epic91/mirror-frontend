@@ -9,9 +9,9 @@ const Nav = ()=> {
     }
 
     return(
-        <nav>
+        <nav className="nav-bar">
             <Link to='/dashboard' style={navstyle}>
-            <h3 className='Mirror-logo'>MIRЯOR</h3>
+            <h3 className='mirror-logo'>Mirror</h3>
             </Link>
             <ul className="nav-links">
                 <Link to="/calendar" style={navstyle}>
@@ -26,7 +26,7 @@ const Nav = ()=> {
                 <Link to="/entryform" style={navstyle}>
                     <li>New Entry</li>
                 </Link>
-                <Link to="/login" style={navstyle}>
+                <Link to="/" style={navstyle}>
                     <li>Sign Out</li>
                 </Link>
             </ul>

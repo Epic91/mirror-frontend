@@ -6,10 +6,3 @@ export const loginSuccess = (user) => {
         user: user
     }
 }
-
-export const currentUser = (user) => {
-    return{
-        type: 'CURRENT_USER',
-        user: user
-    }
-}

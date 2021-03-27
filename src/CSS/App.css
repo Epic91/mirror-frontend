@@ -7,13 +7,15 @@ nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    min-height: 10vh;
-    background-color:Gainsboro;
+    height: 10vh;
+    background-color:rgb(255, 255, 255);
     color: white;
 }
 
 .nav-links{
     width: 90%;
+    font-family: 'Times New Roman', serif;
+    font-size: 16px;
     display: flex;
     justify-content: space-around;
     align-items: center;

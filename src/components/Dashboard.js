@@ -1,29 +1,35 @@
 import React from 'react';
-// import '../CSS/Home.css';
 import styled from 'styled-components'
 import Entries from './Entries'
 import YouTube from './YouTube'
 import { connect } from 'react-redux'
 
 class Dashboard extends React.Component{
-    render(){
-    return(
-        <Container>
-            <h2>Welcome User!</h2>
-            <Main>
-                <YouTube />
-                <Entries />
-            </Main>
-        </Container>
-        )
+    componentDidMount(){
+         if(!this.props.auth){
+             this.props.history.push('/login')
+            }
+        }
+
+        render(){
+            return(
+            <Container>
+                <h2>Welcome User!</h2>
+                <Main>
+                    <YouTube />
+                    <Entries />
+                </Main>
+            </Container>
+            )
+        }
+    }
+
+    const mapStateToProps = (state) => {
+        return {
+            auth: state.auth
     }
 }
 
-const mapStateToProps = (state) => {
-    return{
-        auth: state.auth
-    }
-}
 
 export default connect(mapStateToProps)(Dashboard)
 
