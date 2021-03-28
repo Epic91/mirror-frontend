@@ -1,7 +1,8 @@
-/* .entries-header{
-
-} */
-
+.entry-header{
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+}
 /* .delete-entry{
 
 }*/

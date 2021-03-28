@@ -1,5 +1,7 @@
 import EntryCard from '../components/EntryCard'
 import React from 'react'
+import '../CSS/EntryCard.css';
+
 
 class EntryContainer extends React.Component{
   render(){
@@ -12,6 +14,9 @@ class EntryContainer extends React.Component{
   
   return(
     <div className="entry-container">
+      <div className="subj-date-header">
+        <h1>Subject  Date   </h1>
+      </div>
       {
         renderEntries()
       }

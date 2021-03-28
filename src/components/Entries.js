@@ -1,11 +1,9 @@
 import React from 'react'
 import EntryContainer from '../containers/EntryContainer'
-import EntryForm from './EntryForm'
+// import EntryForm from './EntryForm'
+import styled from 'styled-components'
+import Filter from './Filter'
 import '../CSS/Entries.css';
-
-
-// import Highlights from './Highlights'
-
 
 class Entries extends React.Component{
     constructor(){
@@ -33,7 +31,7 @@ class Entries extends React.Component{
     }
 
     updateEntry = (updatedEntry) => {
-        const updatedEntries = this.state.toys.map(entryObj => {
+        const updatedEntries = this.state.entries.map(entryObj => {
           if (entryObj.id === updatedEntry.id) {
             return updatedEntry
           } else {
@@ -50,21 +48,40 @@ class Entries extends React.Component{
         const updatedEntries = this.state.entries.filter(e => e.id !== id )
     
         this.setState({
-          toys: updatedEntries
+          entries: updatedEntries
         })
       }
 
     render(){
         return(
-        <div className="entries">
-          <EntryContainer entries={this.state.entries} />
-          <EntryForm addEntry={this.addEntry}/>
-        </div>
+          <Container>
+            <h1 className="entry-header">Trip down memory lane:</h1>
+            <Main>
+              <Filter />
+              <div className="entries">
+                <EntryContainer entries={this.state.entries} />
+                {/* <EntryForm addEntry={this.addEntry}/> */}
+              </div>
+            </Main>
+          </Container>
         )
     }
 }
 
 export default Entries;
+
+const Container = styled.div`
+    width: 100%;
+    height: 100vh;
+    background-color: #b1cbbb;
+`
+
+const Main = styled.div`
+
+`
+
+
+
 // Render the entries from the backend here:
 // Display all the entries with subject and date.
 // Each entry should have a view edit and delete link

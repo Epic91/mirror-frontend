@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components'
-import Entries from './Entries'
 import YouTube from './YouTube'
 import { connect } from 'react-redux'
 import '../CSS/Dashboard.css';
@@ -21,7 +20,8 @@ class Dashboard extends React.Component{
                     <YouTube />
                     </div>
                     <div className="right-container">
-                    <Entries />
+                        <h1>Put something here lol</h1>
+                        
 
                     </div>
                 </Main>

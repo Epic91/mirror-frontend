@@ -1,5 +1,4 @@
 import React from 'react'
-import { Table } from 'semantic-ui-react'
 import '../CSS/EntryCard.css';
 
 
@@ -20,43 +19,32 @@ class EntryCard extends React.Component{
     render(){
         const {subject, date} = this.props.entry
         return(
-            <div>
-                {/* Table header needs to be singular only the cells should repeat */}
-                  <Table celled selectable>
-                    <Table.Header>
-                    <Table.Row>
-                        <Table.HeaderCell>Subject</Table.HeaderCell>
-                        <Table.HeaderCell>Date</Table.HeaderCell>
-                        <Table.HeaderCell>Actions</Table.HeaderCell>
-                    </Table.Row>
-                    </Table.Header>
+        <div>
+          <div className="subject-date-container">
+            <input 
+            type="text"
+            value={subject} 
+            />
+            <input 
+            type="text" 
+            value={date} 
+            />
+            <button
+            className="entry-buttons"
+            onClick={console.log('view button')}
+            >View</button>
 
-                    <Table.Body>
-                    <Table.Row>
-                        <Table.Cell>{subject}</Table.Cell>
-                        <Table.Cell>{date}</Table.Cell>
-                        <Table.Cell>
-                            <button
-                            className='view-button'
-                            onClick={console.log('view button')}
-                            >View</button>
+            <button
+            className="entry-buttons"
+            onClick={this.handleDelete}
+            >Delete</button>
 
-                            <button
-                            className='delete-button'
-                            onClick={this.handleDelete}
-                            >Delete</button>
-
-                            <button
-                            className='edit-button'
-                            onClick={console.log('edit button')}
-                            >Edit</button>
-                            {/* onclick get clicked automatically on refresh */}
-                            
-                        </Table.Cell>
-                    </Table.Row>
-                    </Table.Body>
-                </Table>
-            </div>
+            <button
+            className="entry-buttons"
+            onClick={console.log('edit button')}
+            >Edit</button>
+          </div>        
+        </div>
         )
     }
 }
