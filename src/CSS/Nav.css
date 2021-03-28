@@ -5,6 +5,12 @@
     padding-left: 1%;
 }
 
+/* The links */
+a {
+    text-decoration: none;
+
+}
+
 .nav-bar{
     display: flex;
     justify-content: space-around;

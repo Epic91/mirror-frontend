@@ -1,9 +1,7 @@
-
-*{
+* {
     margin: 0;
 }
 
-/* Background color */
 body {
 	background: linear-gradient(-45deg, #ee7752, #e7ab3c, #23a6d5, #23d5ab);
 	background-size: 400% 400%;

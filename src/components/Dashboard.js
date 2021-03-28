@@ -16,10 +16,14 @@ class Dashboard extends React.Component{
         render(){
             return(
             <Container>
-                <h2>Welcome User!</h2>
                 <Main>
+                    <div className="left-container">
                     <YouTube />
+                    </div>
+                    <div className="right-container">
                     <Entries />
+
+                    </div>
                 </Main>
             </Container>
             )
@@ -38,13 +42,14 @@ export default connect(mapStateToProps)(Dashboard)
 const Container = styled.div`
     width: 100%;
     height: 100vh;
-    background-color: HoneyDew;
+    background-color: #ee7752;
     display: grid;
     grid-template-rows: 40px auto;
 `
 
 const Main = styled.div`
     display: grid;
-    grid-template-columns: 800px auto;
-    background-color: white;
+    grid-template-columns: 700px auto;
+    height: 100vh;
+
 `
