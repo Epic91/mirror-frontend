@@ -1,44 +1,44 @@
 import React from 'react'
 
 class SignUp extends React.Component{
-    constructor(){
-        super()
-        this.state = {
-            email: '',
-            username: '',
-            password: ''
-        }
-    }
+    // constructor(){
+    //     super()
+    //     this.state = {
+    //         email: '',
+    //         username: '',
+    //         password: ''
+    //     }
+    // }
 
-    handleChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-    }
+    // handleChange = (e) => {
+    //     this.setState({
+    //         [e.target.name]: e.target.value
+    //     })
+    // }
 
-    handleSubmit = e => {
-        e.preventDefault()
+    // handleSubmit = e => {
+    //     e.preventDefault()
 
-        const reqObj = {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body:  JSON.stringify(this.state)
-          }
+    //     const reqObj = {
+    //         method: 'POST',
+    //         headers: {
+    //           'Content-Type': 'application/json'
+    //         },
+    //         body:  JSON.stringify(this.state)
+    //       }
           
-          fetch('http://localhost:3000/api/v1/auth', reqObj)
-          .then(resp => resp.json())
-          .then(data => {
-              if (data.error){
-                  alert(data.error)
-              } else {
-                  console.log('something')
+    //       fetch('http://localhost:3000/api/v1/auth', reqObj)
+    //       .then(resp => resp.json())
+    //       .then(data => {
+    //           if (data.error){
+    //               alert(data.error)
+    //           } else {
+    //               console.log('something')
 
-                  }
-              }
-            )
-        }
+    //               }
+    //           }
+    //         )
+    //     }
 
         // Things to do:
         //  -Need to somehow tell the backend that only when a user is signing up they need to use the email attribute
@@ -49,9 +49,9 @@ class SignUp extends React.Component{
     render(){
         return(
             <div className="login-container">
-                <h1 className="mirror-header">MIRЯOR</h1>
+                 {/* <h1 className="mirror-header">MIRЯOR</h1> */}
                 
-            <form className="login-form" handleSubmit={this.handleSubmit}>
+            {/* <form className="login-form" handleSubmit={this.handleSubmit}>
                 <h1 className="sign-in-header"> Sign Up</h1>
                 <label>
                     <p>Email:</p>
@@ -90,7 +90,7 @@ class SignUp extends React.Component{
                         >Sign Up
                     </button>                
                 </div>
-            </form>
+            </form> */}
             </div>
         )
     }

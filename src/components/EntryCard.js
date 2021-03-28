@@ -1,23 +1,44 @@
-import React from 'react'
+import React, { Component } from 'react'
 import '../CSS/EntryCard.css';
 
 
-class EntryCard extends React.Component{
+class EntryCard extends Component{
 
-    handleDelete = () => {
-        const reqObj = {
-          method: 'DELETE',
-        }
-    
-        fetch(`http://localhost:3000/entries/${this.props.entry.id}`, reqObj)
-        .then(resp => resp.json()) 
-        .then(data => {
-          this.props.deleteEntry(this.props.entry.id)
-        })
-      }
+  handleDelete = () => {
+    const reqObj = {
+      method: 'DELETE'
+    }
+
+    fetch(`http://localhost:3000/entries/${this.props.entry.id}`, reqObj)
+    .then(resp => resp.json())
+    .then(data => {
+      console.log(data, 'data')
+      this.props.deleteEntry(this.props.entry.id)
+    })
+  }
+
+  handleEdit = () => {
+    const { entries, id} = this.props.entry
+
+    const reqObj = {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        entries: entries + 1
+      })
+    }
+
+    fetch(`http://localhost:3000/entries/${id}`, reqObj)
+    .then(resp => resp.json()) 
+    .then(updatedEntry => {
+      this.props.updateEntry(updatedEntry)
+    })
+  }
 
     render(){
-        const {subject, date} = this.props.entry
+      const { subject, date} = this.props.entry
         return(
         <div>
           <div className="subject-date-container">
@@ -31,7 +52,7 @@ class EntryCard extends React.Component{
             />
             <button
             className="entry-buttons"
-            onClick={console.log('view button')}
+            onClick={this.handleView}
             >View</button>
 
             <button
@@ -41,7 +62,7 @@ class EntryCard extends React.Component{
 
             <button
             className="entry-buttons"
-            onClick={console.log('edit button')}
+            onClick={this.handleEdit}
             >Edit</button>
           </div>        
         </div>

@@ -24,11 +24,15 @@ class Entries extends React.Component{
         })
     }
 
-    addEntry = (newEntry) => {
+    createEntry = (newEntry) => {
       this.setState({
         entries: [...this.state.entries, newEntry]
       })
     }
+
+    // viewEntry = (id) => {
+
+    // }
 
     updateEntry = (updatedEntry) => {
         const updatedEntries = this.state.entries.map(entryObj => {
@@ -38,7 +42,6 @@ class Entries extends React.Component{
             return entryObj
           }
         })
-    
         this.setState({
           entries: updatedEntries
         })
@@ -59,7 +62,7 @@ class Entries extends React.Component{
             <Main>
               <Filter />
               <div className="entries">
-                <EntryContainer entries={this.state.entries} />
+                <EntryContainer entries={this.state.entries} updateEntry={this.updateEntry} deleteEntry={this.deleteEntry}/>
                 {/* <EntryForm addEntry={this.addEntry}/> */}
               </div>
             </Main>
