@@ -33,6 +33,7 @@ class EntryCard extends Component{
     fetch(`http://localhost:3000/entries/${id}`, reqObj)
     .then(resp => resp.json()) 
     .then(updatedEntry => {
+      console.log('data', updatedEntry)
       this.props.updateEntry(updatedEntry)
     })
   }
@@ -50,10 +51,6 @@ class EntryCard extends Component{
             type="text" 
             value={date} 
             />
-            <button
-            className="entry-buttons"
-            onClick={this.handleView}
-            >View</button>
 
             <button
             className="entry-buttons"

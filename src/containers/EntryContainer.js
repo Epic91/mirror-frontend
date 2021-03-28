@@ -8,7 +8,7 @@ const EntryContainer = (props) =>{
     <div className="entry-collection">
     {
       props.entries.map(entry => {
-        return <EntryCard key={entry.id} entry={entry} updateEntry={props.updateEntry} deleteEntry={props.deleteEntry}/>
+        return <EntryCard key={entry.id} entry={entry} updateEntry={props.updateEntry} deleteEntry={props.deleteEntry} />
       })
     }
     </div>

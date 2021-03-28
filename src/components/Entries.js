@@ -9,8 +9,14 @@ class Entries extends React.Component{
     constructor(){
         super()
         this.state = {
-            entries: []
+            entries: [],
         }
+    }
+
+    viewEntry = () => {
+      this.setState({
+        displayEntry: !this.state.displayEntry
+      })
     }
 
     componentDidMount(){
@@ -62,8 +68,7 @@ class Entries extends React.Component{
             <Main>
               <Filter />
               <div className="entries">
-                <EntryContainer entries={this.state.entries} updateEntry={this.updateEntry} deleteEntry={this.deleteEntry}/>
-                {/* <EntryForm addEntry={this.addEntry}/> */}
+                <EntryContainer entries={this.state.entries} updateEntry={this.updateEntry} deleteEntry={this.deleteEntry} displayEntry={this.state.displayEntry}/>
               </div>
             </Main>
           </Container>
