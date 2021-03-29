@@ -7,10 +7,8 @@ import '../CSS/Highlights.css';
 const Highlights = (props) => {    
     return(
         <div>
-            {
-                console.log(props.highlight)
-            }
-
+            Highlights
+  
         </div>
     )
 

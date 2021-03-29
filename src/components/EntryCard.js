@@ -39,28 +39,57 @@ class EntryCard extends Component{
   }
 
     render(){
-      const { subject, date} = this.props.entry
+
+      const { subject, date, body, emotion, topic} = this.props.entry
         return(
-        <div>
+        <div className='all-content'>
           <div className="subject-date-container">
-            <input 
-            type="text"
-            value={subject} 
-            />
-            <input 
-            type="text" 
-            value={date} 
-            />
+
+            <h1>{subject}</h1>
+            <h3>{date}</h3>
+            <h4>{body}</h4>
+            <h4>{emotion}</h4>
+            <h4>{topic}</h4>
+              {/* <input 
+              type="text"
+              value={subject} 
+              /> */}
+
+
+              {/* <input 
+              type="text" 
+              value={date} 
+              /> */}
+
+
+              {/* <input 
+              type="text"
+              value={body} 
+              /> */}
+
+
+              {/* <input 
+              type="text"
+              value={emotion}
+              /> */}
+
+
+              {/* <input 
+              type="text"
+              value={topic}
+              /> */}
 
             <button
             className="entry-buttons"
             onClick={this.handleDelete}
             >Delete</button>
 
+
             <button
             className="entry-buttons"
             onClick={this.handleEdit}
             >Edit</button>
+            
           </div>        
         </div>
         )

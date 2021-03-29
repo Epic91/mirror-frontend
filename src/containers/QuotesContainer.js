@@ -1,32 +1,35 @@
 import React from 'react'
-import styled from 'styled-components'
-import QuotesCard from '../components/QuotesCard'
+// import styled from 'styled-components'
+// import QuotesCard from '../components/QuotesCard'
 
 class QuotesContainer extends React.Component{
-    state = {
-        quotes: []
-    }
+    // state = {
+    //     quotes: []
+    // }
 
-    componentDidMount(){
-        fetch('http://localhost:3001/quotesArr')
-        .then(resp => resp.json())
-        .then(data => {
-            console.log('data', data)
-        })
-    }
+    // componentDidMount(){
+    //     fetch('http://localhost:3001/quotesArr')
+    //     .then(resp => resp.json())
+    //     .then(data => {
+    //         console.log('data', data)
+    //     })
+    // }
 
     render(){
         return (
-        <Container>
-            <QuotesCard />
-        </Container>
+            <div>
+                hello
+            </div>
+        // <Container>
+        //     <QuotesCard />
+        // </Container>
         )
     }
 }
 
 export default QuotesContainer
 
-const Container = styled.div`
+// const Container = styled.div`
 
-`
+// `
 

@@ -1,36 +1,36 @@
 import React from 'react'
 import '../CSS/Filter.css';
 
-function Filter() {
-    return (
-        <div className='filterWrapper'>
-        <div className='ui menu'>
-            <div className='item'>
-            <label className="sort-text">Sort by: </label>
-            </div>
-            <div className='dd-items'>
-                <select
-                className='dropdown'
-                name='sort'
-                onChange='something'
-                >
+class Filter extends React.Component {
+    render() {
+        return (
+            <div className='filter'>
+                <div className='options'>
+                    <label>Sort by:</label>
+                 </div>
+                 <div className='ui item'>
+                     <select
+                     className='ui selection dropdown'
+                     name='sort'
+                     onChange={this.props.updatedFilter}
+                     >
+    
                     <option value=''></option>
-                    <option value='name'>Date</option>
-                    <option value='weight'>Emotion</option>
-                    <option value='weight'>Topic</option>
-                </select>
+                    <option value='data'>Date</option>
+                    <option value='topic'>Topic</option>
+    
+                    </select>
+              </div>
+                {/* <select name="search" id="search">
+                    <option value="">Sort By:</option>
+                    <option value="date">Date</option>
+                    <option value="emotion">Emotion</option>
+                    <option value="topic">Topic</option>
+                </select> */}
+    
             </div>
-            <div className='search-butn-div'>
-              <button
-                className='search-btn'
-                onClick='something'
-                >
-                Search
-              </button>
-            </div>
-        </div>
-        </div>
-    )
-}
+            )
+        }
+    }
 
 export default Filter

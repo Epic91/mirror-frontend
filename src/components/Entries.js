@@ -1,8 +1,7 @@
 import React from 'react'
 import EntryContainer from '../containers/EntryContainer'
-// import EntryForm from './EntryForm'
 import styled from 'styled-components'
-import Filter from './Filter'
+// import Filter from './Filter'
 import '../CSS/Entries.css';
 
 class Entries extends React.Component{
@@ -10,13 +9,8 @@ class Entries extends React.Component{
         super()
         this.state = {
             entries: [],
+            // filter: ''
         }
-    }
-
-    viewEntry = () => {
-      this.setState({
-        displayEntry: !this.state.displayEntry
-      })
     }
 
     componentDidMount(){
@@ -30,15 +24,45 @@ class Entries extends React.Component{
         })
     }
 
-    createEntry = (newEntry) => {
-      this.setState({
-        entries: [...this.state.entries, newEntry]
-      })
-    }
-
-    // viewEntry = (id) => {
-
+    // createEntry = (newEntry) => {
+    //   this.setState({
+    //     entries: [...this.state.entries, newEntry]
+    //   })
     // }
+    // updateFilter = (e) => {
+    //   this.setState({
+    //     filter: e.target.value
+    //   })
+    // }
+
+    // entriesToShow = () => {
+    //   let updatedEntries = this.state.entries
+
+    //   if(this.state.filter === 'date'){
+    //     updatedEntries.sort(function(entryA, entryB){
+    //       if( entryA < entryB) {
+    //         return -1;
+    //       }
+    //       if( entryA > entryB) {
+    //         return 1;
+    //       }
+    //       return 0;
+    //     });
+    //   } else if(this.state.filter === 'topic'){
+    //     updatedEntries.sort(function(entryA, entryB){
+    //       if (entryA < entryB){
+    //         return -1;
+    //       }
+    //       if (entryA < entryB){
+    //         return 1;
+    //       }
+    //       return 0;
+    //     })
+    //   }
+    //   console.log(updatedEntries)
+    //   return updatedEntries
+    // }
+
 
     updateEntry = (updatedEntry) => {
         const updatedEntries = this.state.entries.map(entryObj => {
@@ -66,9 +90,9 @@ class Entries extends React.Component{
           <Container>
             <h1 className="entry-header">Trip down memory lane:</h1>
             <Main>
-              <Filter />
+              {/* <Filter updateFilter={this.updatedFilter}/> */}
               <div className="entries">
-                <EntryContainer entries={this.state.entries} updateEntry={this.updateEntry} deleteEntry={this.deleteEntry} displayEntry={this.state.displayEntry}/>
+                <EntryContainer entries={this.state.entries} updateEntry={this.updateEntry} deleteEntry={this.deleteEntry}/>
               </div>
             </Main>
           </Container>
