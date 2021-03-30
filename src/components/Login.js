@@ -1,6 +1,5 @@
 import React from 'react'
 import '../CSS/Login.css';
-// import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { loginSuccess } from '../actions/index'
 

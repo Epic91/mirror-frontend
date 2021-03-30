@@ -8,14 +8,12 @@ class EntryForm extends React.Component{
             this.state = {
                 subject: '',
                 emotion: '',
-                emotion_image: '',
                 topic: '',
-                topic_image: '',
                 highlight: '',
                 date:'',
                 body: '',
                 user_id: 1,
-                prompt_id: 1
+                prompt_id: 1,                
                 // prompts: []
             }
         }
@@ -53,8 +51,9 @@ class EntryForm extends React.Component{
               fetch('http://localhost:3000/entries', reqObj)
               .then(resp => resp.json())
               .then(newEntry => {
-                //   console.log(newEntry, '-----')
+                  this.props.history.push('/entries')
                 //   this.props.createEntry(newEntry)
+                    console.log(newEntry, '-----')
                 })
                 this.setState({
                     subject: '',
@@ -62,7 +61,7 @@ class EntryForm extends React.Component{
                     date:'',
                     body: '',
                     topic: '',
-                    highlight: ''
+                    highlight: '',
                 })
             }
             //   if (newEntry.error){
@@ -87,23 +86,23 @@ class EntryForm extends React.Component{
                 onChange={this.handleChange}
                 />
 
-                <p>How are you feeling today?</p>
+                {/* <p>How are you feeling today?</p>
                 <input
                 name='emotion'
                 value={this.state.emotion}
                 type='text'
                 placeholder='Enter emotion here'
                 onChange={this.handleChange}
-                />
+                /> */}
 
-                <p>What is making you feel this way?</p>
+                {/* <p>What is making you feel this way?</p>
                 <input
                 name='topic'
                 value={this.state.topic}
                 type='text'
                 placeholder='Enter a topic here'
                 onChange={this.handleChange}
-                />
+                /> */}
 
                 <p>What is one good thing that happened today? Big or small :)</p>
                 <input
@@ -123,44 +122,34 @@ class EntryForm extends React.Component{
                 onChange={this.handleChange}
                 />
                 
-                {/* <label for="cars">How are you feeling?:</label>
-                <select name="emotions" id="emotion" onSelect={this.handleSelect} >
-                <option value="select">Select</option>
-                <option value="sad">Angry 😡 </option>
-                <option value="anxious">Anxious 😰</option>
-                <option value="depressed">Depressed 😥</option>
-                <option value="good">Good 🙂</option>
-                <option value="furious">Furious 🤬</option>
-                <option value="happy">Happy 😃</option>
-                <option value="okay">Okay 😐</option>
-                <option value="sad">Sad 🙁</option>
-                <option value="stressed">Stressed 😓</option>
-                </select> */}
-
-                {/* <p>
-                <label for="cars">What is making you feel this way?:</label>
-                <select name="topics" id="topic">
-                <option value="">Choose one</option>
-                <option value="sad">Family </option>
-                <option value="anxious">Finance</option>
-                <option value="depressed">Friends</option>
-                <option value="good">Health</option>
-                <option value="furious">Marriage</option>
-                <option value="happy">Relationship</option>
-                <option value="sad">School</option>
-                <option value="stressed">Work</option>
+                <label for="emotion">How are you feeling?:</label>
+                <select name="emotion" value={this.state.value} onChange={this.handleChange}>
+                    <option value="select">Select</option>
+                    <option value="Angry 😡">Angry 😡 </option>
+                    <option value="Anxious 😰">Anxious 😰</option>
+                    <option value="Depressed 😥">Depressed 😥</option>
+                    <option value="Good 🙂">Good 🙂</option>
+                    <option value="Furious 🤬">Furious 🤬</option>
+                    <option value="Happy 😃">Happy 😃</option>
+                    <option value="Okay 😐">Okay 😐</option>
+                    <option value="Sad 🙁">Sad 🙁</option>
+                    <option value="Stressed 😓">Stressed 😓</option>
                 </select>
-                </p> */}
 
-
-
-
-                {/* <div className="prompt-drop-down">
-                    <p>Prompts:</p>
-                    <select>{this.state.prompts.map((obj) => {
-                        return <option key={obj.id}>{obj.question}</option>})
-                    }</select>
-                </div> */}
+                <p>
+                <label for="topic">What is making you feel this way?:</label>
+                <select name="topic" value={this.state.value} onChange={this.handleChange}>
+                <option value="">Choose one</option>
+                <option value="Family 🏡">Family 🏡 </option>
+                <option value="Finance 💰">Finance 💰</option>
+                <option value="Friends 🤝🏾">Friends 🤝🏾</option>
+                <option value="Health 🏥">Health 🏥</option>
+                <option value="Marriage 💍">Marriage 💍</option>
+                <option value="Relationship ❤️">Relationship ❤️</option>
+                <option value="School 🎒">School 🎒</option>
+                <option value="Work 💼">Work 💼</option>
+                </select>
+                </p>
 
                 <div className='form-body'>
                     <textarea

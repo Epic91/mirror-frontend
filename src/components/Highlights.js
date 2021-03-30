@@ -6,10 +6,12 @@ import '../CSS/Highlights.css';
 
 const Highlights = (props) => {    
     return(
+        //render the highlights here
+        //
         <div>
-            Highlights
-  
+            Highlights here
         </div>
+
     )
 
 }

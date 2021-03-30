@@ -8,6 +8,8 @@ function Cal() {
   const [value, onChange] = useState(new Date());
 
   return (
+    //On click of day render entries entered on that specific day
+
     <Container>
       <div className="calendar">
         <Calendar

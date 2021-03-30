@@ -3,6 +3,8 @@ import EntryContainer from '../containers/EntryContainer'
 import styled from 'styled-components'
 // import Filter from './Filter'
 import '../CSS/Entries.css';
+// import QuotesCard from './QuotesCard';
+// import Highlights from './Highlights';
 
 class Entries extends React.Component{
     constructor(){
@@ -24,58 +26,25 @@ class Entries extends React.Component{
         })
     }
 
-    // createEntry = (newEntry) => {
-    //   this.setState({
-    //     entries: [...this.state.entries, newEntry]
-    //   })
-    // }
-    // updateFilter = (e) => {
-    //   this.setState({
-    //     filter: e.target.value
-    //   })
-    // }
-
-    // entriesToShow = () => {
-    //   let updatedEntries = this.state.entries
-
-    //   if(this.state.filter === 'date'){
-    //     updatedEntries.sort(function(entryA, entryB){
-    //       if( entryA < entryB) {
-    //         return -1;
-    //       }
-    //       if( entryA > entryB) {
-    //         return 1;
-    //       }
-    //       return 0;
-    //     });
-    //   } else if(this.state.filter === 'topic'){
-    //     updatedEntries.sort(function(entryA, entryB){
-    //       if (entryA < entryB){
-    //         return -1;
-    //       }
-    //       if (entryA < entryB){
-    //         return 1;
-    //       }
-    //       return 0;
-    //     })
-    //   }
-    //   console.log(updatedEntries)
-    //   return updatedEntries
-    // }
-
-
     updateEntry = (updatedEntry) => {
-        const updatedEntries = this.state.entries.map(entryObj => {
-          if (entryObj.id === updatedEntry.id) {
-            return updatedEntry
-          } else {
-            return entryObj
-          }
-        })
-        this.setState({
-          entries: updatedEntries
-        })
-      }
+      const newState = this.state.entries.map(entryObj => {
+        if(entryObj.id === updatedEntry.id) {
+          return updatedEntry
+        } else {
+          return entryObj
+        }
+      })
+      this.setState({
+        entries: newState
+      })
+    }
+        // const updatedEntries = this.state.entries.map(entryObj => {
+        //   if (entryObj.id === updatedEntry.id) {
+        //     return updatedEntry
+        //   } else {
+        //     return entryObj
+        //   }
+        // })
 
       deleteEntry = (id) => {
         const updatedEntries = this.state.entries.filter(e => e.id !== id )
@@ -86,19 +55,26 @@ class Entries extends React.Component{
       }
 
     render(){
-        return(
-          <Container>
+      return(
+        <Container>
+          <Main> 
             <h1 className="entry-header">Trip down memory lane:</h1>
-            <Main>
-              {/* <Filter updateFilter={this.updatedFilter}/> */}
               <div className="entries">
                 <EntryContainer entries={this.state.entries} updateEntry={this.updateEntry} deleteEntry={this.deleteEntry}/>
               </div>
-            </Main>
-          </Container>
-        )
+         </Main>
+        </Container>
+      )
     }
-}
+  }
+       /* <QuotesCard createEntry={this.createEntry}/> */
+        
+      
+    
+        /* <Filter updateFilter={this.updatedFilter}/> */
+
+          
+       /* <Highlights />  */
 
 export default Entries;
 
