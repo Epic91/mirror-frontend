@@ -3,43 +3,48 @@
     text-indent: 560px;
     word-spacing: 250px;
     margin-top: 8vh; 
-
 }
+
 
 .subject-date-container{
-    width: 1400px;
-    margin-left: 30vh;
-
+    width: 1000px;
+    margin-left: 50vh;
 }
 
-.entry-buttons{
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 12px 15px;
-    text-align: center;
-    /* text-decoration: none; */
-    display: inline-block;
-    font-size: 13px;
-
+.entries{
+    height: 950px;
+    overflow: scroll;
 }
 
 .subject{
-
+    font-family: 'Times New Roman', serif;
+    font-size: 25px;
 }
 
 .date{
+    font-family: 'Times New Roman', serif;
+    font-size: 14px;
+    line-height: .4;
 
 }
 
-.mainbody{
-
-}
 
 .emotion{
+    font-family: 'Times New Roman', serif;
+    font-size: 14px;
+    line-height: .4;
 
 }
 
 .topic{
+    font-family: 'Times New Roman', serif;
+    font-size: 14px;
+    line-height: .4;
 
+}
+
+.mainbody{
+    font-family: 'Times New Roman', serif;
+    font-size: 16px;
+    line-height: .8;
 }

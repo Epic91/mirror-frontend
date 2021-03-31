@@ -1,5 +1,7 @@
 import React from 'react'
-import '../CSS/App.css';
+import '../CSS/EntryForm.css';
+import { Button } from 'semantic-ui-react'
+import 'semantic-ui-css/semantic.min.css'
 
 
 class EntryForm extends React.Component{
@@ -13,20 +15,9 @@ class EntryForm extends React.Component{
                 date:'',
                 body: '',
                 user_id: 1,
-                prompt_id: 1,                
-                // prompts: []
+                prompt_id: 1
             }
         }
-        
-        // componentDidMount(){
-        //     fetch('http://localhost:3000/prompts')
-        //     .then(resp => resp.json())
-        //     .then(prompts => {
-        //         this.setState({
-        //             prompts: prompts
-        //         })
-        //     })
-        // }
 
         handleChange = (e) => {
             this.setState({
@@ -52,7 +43,6 @@ class EntryForm extends React.Component{
               .then(resp => resp.json())
               .then(newEntry => {
                   this.props.history.push('/entries')
-                //   this.props.createEntry(newEntry)
                     console.log(newEntry, '-----')
                 })
                 this.setState({
@@ -61,114 +51,89 @@ class EntryForm extends React.Component{
                     date:'',
                     body: '',
                     topic: '',
-                    highlight: '',
+                    highlight: ''
                 })
             }
-            //   if (newEntry.error){
-            //       alert(newEntry.error)
-            //   } else {
-            //     alert("Your entry has been submitted :)");
-            // Need to work on errors 
-            // The data isnt going to the db
-            //Clear the form
-            // Need to update the database
-            // Need to style
-
         render() {
-        return (
-            <form className='entry-form' onSubmit={this.handleSubmit}>
-                <p>Subject:</p>
-                <input
-                name='subject'
-                value={this.state.subject}
-                // type='text'
-                placeholder='Max 50 characters'
-                onChange={this.handleChange}
-                />
+            return (
+            <div className='entry-container'>
+                <h1 className='entry-form-header'>Some title here:</h1>
+                <form className='entry-form' onSubmit={this.handleSubmit}>
+                    <div className="text-fields">  
+                        <input
+                        name='subject'
+                        value={this.state.subject}
+                        type='text-form'
+                        placeholder='Subject'
+                        onChange={this.handleChange}
+                        />
 
-                {/* <p>How are you feeling today?</p>
-                <input
-                name='emotion'
-                value={this.state.emotion}
-                type='text'
-                placeholder='Enter emotion here'
-                onChange={this.handleChange}
-                /> */}
+                        <input
+                        name='date'
+                        value={this.state.date}
+                        type='text-form'
+                        placeholder='Date'
+                        onChange={this.handleChange}
+                        />
 
-                {/* <p>What is making you feel this way?</p>
-                <input
-                name='topic'
-                value={this.state.topic}
-                type='text'
-                placeholder='Enter a topic here'
-                onChange={this.handleChange}
-                /> */}
+                        <input
+                        name='highlight'
+                        value={this.state.highlight}
+                        type='highlight'
+                        placeholder='What is one good thing that happened today? Big or small :)'
+                        onChange={this.handleChange}
+                        />
+                    </div>
 
-                <p>What is one good thing that happened today? Big or small :)</p>
-                <input
-                name='highlight'
-                value={this.state.highlight}
-                type='text'
-                placeholder='Enter highlight here'
-                onChange={this.handleChange}
-                />
+                        <p>How are you feeling?</p>
 
-                <p>Date:</p>
-                <input
-                name='date'
-                value={this.state.date}
-                type='text'
-                placeholder='Enter Date here'
-                onChange={this.handleChange}
-                />
-                
-                <label for="emotion">How are you feeling?:</label>
-                <select name="emotion" value={this.state.value} onChange={this.handleChange}>
-                    <option value="select">Select</option>
-                    <option value="Angry 😡">Angry 😡 </option>
-                    <option value="Anxious 😰">Anxious 😰</option>
-                    <option value="Depressed 😥">Depressed 😥</option>
-                    <option value="Good 🙂">Good 🙂</option>
-                    <option value="Furious 🤬">Furious 🤬</option>
-                    <option value="Happy 😃">Happy 😃</option>
-                    <option value="Okay 😐">Okay 😐</option>
-                    <option value="Sad 🙁">Sad 🙁</option>
-                    <option value="Stressed 😓">Stressed 😓</option>
-                </select>
+                        <div className="drop-down-field">
+                            <select name="emotion" value={this.state.value} onChange={this.handleChange}>
+                                <option value="select">Select</option>
+                                <option value="Angry 😡">Angry 😡 </option>
+                                <option value="Anxious 😰">Anxious 😰</option>
+                                <option value="Depressed 😥">Depressed 😥</option>
+                                <option value="Good 🙂">Good 🙂</option>
+                                <option value="Furious 🤬">Furious 🤬</option>
+                                <option value="Happy 😃">Happy 😃</option>
+                                <option value="Okay 😐">Okay 😐</option>
+                                <option value="Sad 🙁">Sad 🙁</option>
+                                <option value="Stressed 😓">Stressed 😓</option>
+                            </select>
+                        </div>
 
-                <p>
-                <label for="topic">What is making you feel this way?:</label>
-                <select name="topic" value={this.state.value} onChange={this.handleChange}>
-                <option value="">Choose one</option>
-                <option value="Family 🏡">Family 🏡 </option>
-                <option value="Finance 💰">Finance 💰</option>
-                <option value="Friends 🤝🏾">Friends 🤝🏾</option>
-                <option value="Health 🏥">Health 🏥</option>
-                <option value="Marriage 💍">Marriage 💍</option>
-                <option value="Relationship ❤️">Relationship ❤️</option>
-                <option value="School 🎒">School 🎒</option>
-                <option value="Work 💼">Work 💼</option>
-                </select>
-                </p>
+                        <p>What is making you feel this way?</p>
+                        <div className='drop-down-field'>
+                            <select name="topic" value={this.state.value} onChange={this.handleChange}>
+                            <option value="">Select</option>
+                            <option value="Family 🏡">Family 🏡 </option>
+                            <option value="Finance 💰">Finance 💰</option>
+                            <option value="Friends 🤝🏾">Friends 🤝🏾</option>
+                            <option value="Health 🏥">Health 🏥</option>
+                            <option value="Marriage 💍">Marriage 💍</option>
+                            <option value="Relationship ❤️">Relationship ❤️</option>
+                            <option value="School 🎒">School 🎒</option>
+                            <option value="Work 💼">Work 💼</option>
+                            </select>
+                        </div>
+                        
+                        <div className="context-container">
+                            <textarea
+                            className ='form-body'
+                            name='body'
+                            value={this.state.body}
+                            type='text'
+                            placeholder='Vent your heart out!'
+                            onChange={this.handleChange}
+                            />
+                        </div>
 
-                <div className='form-body'>
-                    <textarea
-                    name='body'
-                    value={this.state.body}
-                    type='text'
-                    placeholder='Vent your heart out!'
-                    rows={10}
-                    onChange={this.handleChange}
-                    />
-                </div>
-
-                <button 
-                className='entry-submit-button'
-                type='submit' 
-                handleSubmit={this.handleSubmit}>Submit</button>     
-            </form>
+                    <Button primary handleSubmit={this.handleSubmit}>Submit</Button>
+                </form>
+            </div>
             )
         }
     }
+
   
 export default EntryForm;
