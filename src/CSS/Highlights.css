@@ -1,0 +1,23 @@
+.message-container{
+    margin-top: 100px; 
+    margin-left: 550px;   
+    width: 900px;
+    text-align: center;
+}
+
+.highlight-header{
+    font-family: 'Kaushan Script', cursive;
+    font-size: 40px;
+    text-align: center;
+}
+
+.highlight-author{
+    font-family: 'Kaushan Script', cursive;
+    text-align: right;
+    margin-right: 600px;
+    font-size: 20px;
+}
+
+.quote-container{
+    margin-top: 50px;
+}

@@ -9,28 +9,16 @@ function Cal() {
 
   return (
 
-    <Container>
-      <div className="calendar">
+    // <Container>
         <Calendar
+        className='calendar'
           onChange={onChange}
           value={value}
           />
-        <div className="entries-filter">
-          <h2>Filtered entries here:</h2>
-        </div>
-        <div className="highlights-filter">
-          <h2>Filtered highlights here:</h2>
-        </div>
-      </div>
-    </Container>
+
   );
 }
 
+
 export default Cal;
 
-const Container = styled.div`
-  width: 100%;
-  height: 100vh;
-  background-color: #ee7752;
-
-`

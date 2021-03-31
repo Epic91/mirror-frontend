@@ -53,7 +53,7 @@ class Login extends React.Component{
         render(){
             return(
                 <div className="login-container">
-                    <h1 className="mirror-header">Mirror</h1>
+                    <h1 className="mirror-header">MIRЯOR</h1>
                 <div>
                     <form className="login-form" onSubmit={this.handleSubmit}>
                         <h1 className="sign-in-header"> Sign in</h1>

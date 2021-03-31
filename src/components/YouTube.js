@@ -5,7 +5,8 @@ import '../CSS/Youtube.css';
 function YouTube() {
     return (
         <ReactPlayer
-        width={'550px'}
+        className='yt'
+        width={'500px'}
         height={'300px'}
         url="https://www.youtube.com/watch?v=DWcJFNfaw9c"/>
     )

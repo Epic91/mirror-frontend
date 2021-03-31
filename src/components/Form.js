@@ -1,9 +1,9 @@
 import React from 'react'
 import '../CSS/Form.css'
 
+
 function Form({setInputText, todos, setTodos, inputText, setStatus}) {
     const inputTextHandler = (e) => {
-        // console.log(e.target.value)
         setInputText(e.target.value);
     }
     const submitHandler = (e) => {
@@ -23,6 +23,7 @@ function Form({setInputText, todos, setTodos, inputText, setStatus}) {
         // <div className='todo-container'>
             <form className="todo-form">
                 <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input"/>
+                {/* <Icon onClick={submitHandler} className='todo-button'name='plus' type='submit'/> */}
                 <button onClick={submitHandler}className="todo-button" type="submit">
                     <i className="fas fa-plus-square"></i>
                 </button>

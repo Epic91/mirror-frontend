@@ -1,1 +1,38 @@
 
+.column {
+    float: left;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+
+  .left {
+    width: 30%;
+    margin-top: 100px;
+  }
+  
+  .right {
+    width: 70%;
+    height: 1000px;
+    background: rgb(142, 200, 214);
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+
+.entire-form-container{
+    background: #23a6d5;
+    margin-left: 600px;
+}
+
+.calendar{
+    margin-top: 50px;
+    margin-left: 70px;
+}
+
+.body{
+    background: crimson;
+}

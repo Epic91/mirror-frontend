@@ -9,6 +9,8 @@ import Highlights from './Highlights';
 import SignUp from './SignUp';
 import EntryForm from './EntryForm'
 import '../CSS/App.css';
+import 'semantic-ui-css/semantic.min.css'
+
 
 class App extends React.Component{
 

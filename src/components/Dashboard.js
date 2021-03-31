@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import '../CSS/Dashboard.css';
 import Form from './Form'
 import TodoList from './TodoList'
+import Cal from './Cal'
 
 
 function Dashboard () {
@@ -51,11 +52,18 @@ function Dashboard () {
     
     
     return(
-        <div className="left-container">
+        <div class ='row'>
+
+        <div class="column left">
             <YouTube />
+            <Cal/>
+
+            </div>
+            <div class='column right'>
             <header>
-                <h1>To-Do List:</h1>
+                <h1 className='todo-header'>Ev's To-Do List:</h1>
             </header>
+
             <Form 
             inputText={inputText}  
             todos={todos} 
@@ -67,7 +75,9 @@ function Dashboard () {
             filteredTodos={filteredTodos}
             setTodos={setTodos} 
             todos={todos}/>
-        </div>
+            </div>
+            </div>
+        
                 )
             }
         

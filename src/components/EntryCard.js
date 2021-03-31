@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import '../CSS/EntryCard.css';
 import EditEntry from './EditEntry'
-import { Segment, Button } from 'semantic-ui-react'
-import 'semantic-ui-css/semantic.min.css'
+import { Segment, Icon } from 'semantic-ui-react'
+// import 'semantic-ui-css/semantic.min.css'
 
 class EntryCard extends Component{
   state = {
@@ -50,8 +50,10 @@ class EntryCard extends Component{
 
                 {this.state.editForm ? <EditEntry entry={this.props.entry} updateEntry={this.props.updateEntry} handleSubmit={this.handleSubmit}/> : null}       
 
-                <Button secondary onClick={this.handleEdit}>Edit</Button>
-                <Button primary onClick={this.handleDelete}>Delete</Button>
+                {/* <Button secondary onClick={this.handleEdit}>Edit</Button> */}
+                <Icon onClick={this.handleEdit} name='edit' size='large'/>
+                <Icon onClick={this.handleDelete} name='trash' size='large'/>
+                {/* <Button primary onClick={this.handleDelete}>trash</Button> */}
               </Segment>
               </div>        
             </div>

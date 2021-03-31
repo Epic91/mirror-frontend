@@ -1,13 +1,11 @@
-.cal-container{
-    background: tomato;
-}
 
-.calendar{
+
+/* .calendar{
     position: relative;
     bottom: -300px;
     left: 150px;
     width: 300px;
-}
+} */
 
 .entries-filter{
     position: relative;

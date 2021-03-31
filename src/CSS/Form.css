@@ -1,5 +1,5 @@
 .filter-todo{
-    width: 170px;
+    width: 150px;
     color: #dd3507;
     cursor: pointer;
 
@@ -7,41 +7,21 @@
 .todo-form{
   display: flex;
   justify-content: center;
-
 }
 
-.todo {
-  margin: 0.5rem;
-  background: white;
+/* buttons */
+.todo-button{
+  margin: 5px;
+  color: white;
   font-size: 1.5rem;
-  color: black;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: all 1s ease;
+  background: white;
+  padding: 0.5rem;
+  border: none;
 }
-
-.todo-item {
-  padding: 0rem 0.5rem;
-}
-
-.todo-container{
-    min-height: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-select {
-    color: #ff6f47;
-    font-family: "Poppins", sans-serif;
-    cursor: pointer;
-    width: 15rem;
-  }
 
 .trash-btn,
 .complete-btn {
-  background: #ff6f47;
+  background: #dd3507;
   color: white;
   border: none;
   padding: 1rem;
@@ -49,18 +29,96 @@ select {
   font-size: 1rem;
 }
 
-.fa-trash,
-.fa-check {
-  pointer-events: none;
+.complete-btn {
+  background: rgb(11, 212, 162);
 }
 
-.completed {
+
+/* TEXT */
+.todo-header{
+  font-family: 'Kaushan Script', cursive;
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  min-height: 10vh;
+}
+
+.todo {
+  margin: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+}
+
+
+/* .todo-item {
+  padding: 0rem 0.5rem;
+  text-decoration: line-through;
+  opacity: 0.5;
+} */
+
+
+.todo-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+} */
+
+
+
+/* .fa-trash,
+.fa-plus-square,
+.fa-check {
+  pointer-events: none;
+} */
+
+.completed{
   text-decoration: line-through;
   opacity: 0.5;
 }
 
+/* .todo-input
+{
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background-color: white;
+} */
 
+.todo-button{
+  color: #dd3507;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
+.todo-button:hover{
+  background: #dd3507;
+  color: white;
+
+}
+
+.todo-item{
+  min-width: 30%;
+  list-style: none;
+}
 
 
 
