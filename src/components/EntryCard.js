@@ -4,8 +4,6 @@ import EditEntry from './EditEntry'
 import { Segment, Button } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 
-
-
 class EntryCard extends Component{
   state = {
     editForm: false
@@ -35,6 +33,7 @@ class EntryCard extends Component{
       editForm: false
     })
   }
+
     render(){
       const { subject, date, body, emotion, topic} = this.props.entry
         return(
@@ -49,8 +48,8 @@ class EntryCard extends Component{
                 <br></br>
                 <h5 className="mainbody">{body}</h5>
 
-                {this.state.editForm ? <EditEntry entry={this.props.entry} updateEntry={this.props.updateEntry} handleSubmit={this.handleSubmit}/> : null}
-                
+                {this.state.editForm ? <EditEntry entry={this.props.entry} updateEntry={this.props.updateEntry} handleSubmit={this.handleSubmit}/> : null}       
+
                 <Button secondary onClick={this.handleEdit}>Edit</Button>
                 <Button primary onClick={this.handleDelete}>Delete</Button>
               </Segment>
@@ -62,4 +61,3 @@ class EntryCard extends Component{
 }
 
 export default EntryCard;
-

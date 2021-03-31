@@ -1,55 +1,88 @@
-import React from 'react';
-import styled from 'styled-components'
+import React, {useState, useEffect}from 'react';
 import YouTube from './YouTube'
 import { connect } from 'react-redux'
 import '../CSS/Dashboard.css';
+import Form from './Form'
+import TodoList from './TodoList'
 
 
-class Dashboard extends React.Component{
-    componentDidMount(){
-         if (!this.props.auth){
-             this.props.history.push('/')
-            }
-        }
+function Dashboard () {
 
-        render(){
-            return(
-            <Container>
-                <Main>
-                    <div className="left-container">
-                    <YouTube />
-                    </div>
-                    <div className="right-container">
-                        <h1>Put something here lol</h1>
-                        
+    const [inputText, setInputText] = useState ("");
+    const [todos, setTodos] =  useState([]);
+    const [status, setStatus] = useState('all')
+    const [filteredTodos, setFilteredTodos] = useState([])
 
-                    </div>
-                </Main>
-            </Container>
-            )
+    useEffect(() => {
+        getLocalTodos()
+    }, [ ])
+
+    useEffect(() => {
+        filterHandler() 
+        saveLocalTodos()
+    }, [todos, status]);
+
+    const filterHandler = () => {
+        switch(status){
+            case 'completed':
+                setFilteredTodos(todos.filter((todo) => todo.completed === true))
+                break;
+            case 'uncompleted':
+                setFilteredTodos(todos.filter((todo) => todo.completed === false))
+                break;
+            default:
+            setFilteredTodos(todos);
+            break;
         }
     }
 
-    const mapStateToProps = (state) => {
-        return {
-            auth: state.auth
+    const saveLocalTodos = () => {
+        localStorage.setItem('todos', JSON.stringify(todos))
+        
+    };
+    const getLocalTodos = () => {
+        if(localStorage.getItem('todos') === null){
+            localStorage.setItem('todos', JSON.stringify([]))
+        } else {
+            let todoLocal = JSON.parse(localStorage.getItem('todos'))
+            setTodos(todoLocal)
+        }
+    };
+    
+    
+    return(
+        <div className="left-container">
+            <YouTube />
+            <header>
+                <h1>To-Do List:</h1>
+            </header>
+            <Form 
+            inputText={inputText}  
+            todos={todos} 
+            setTodos={setTodos} 
+            setInputText={setInputText}
+            setStatus={setStatus}
+            />
+            <TodoList 
+            filteredTodos={filteredTodos}
+            setTodos={setTodos} 
+            todos={todos}/>
+        </div>
+                )
+            }
+        
+
+
+const mapStateToProps = (state) => {
+    return {
+        auth: state.auth
     }
 }
 
-
 export default connect(mapStateToProps)(Dashboard)
 
-const Container = styled.div`
-    width: 100%;
-    height: 100vh;
-    background-color: #ee7752;
-    display: grid;
-    grid-template-rows: 40px auto;
-`
-
-const Main = styled.div`
-    display: grid;
-    grid-template-columns: 700px auto;
-    height: 100vh;
-
-`
+    // componentDidMount(){
+    //      if (!this.props.auth){
+    //          this.props.history.push('/')
+    //         }
+    //     }

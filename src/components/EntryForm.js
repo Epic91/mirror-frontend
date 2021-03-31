@@ -41,9 +41,9 @@ class EntryForm extends React.Component{
               
               fetch('http://localhost:3000/entries', reqObj)
               .then(resp => resp.json())
-              .then(newEntry => {
+              .then(data => {
+
                   this.props.history.push('/entries')
-                    console.log(newEntry, '-----')
                 })
                 this.setState({
                     subject: '',
@@ -54,6 +54,7 @@ class EntryForm extends React.Component{
                     highlight: ''
                 })
             }
+
         render() {
             return (
             <div className='entry-container'>
@@ -85,7 +86,7 @@ class EntryForm extends React.Component{
                         />
                     </div>
 
-                        <p>How are you feeling?</p>
+                        <p>How are you doing right now?</p>
 
                         <div className="drop-down-field">
                             <select name="emotion" value={this.state.value} onChange={this.handleChange}>

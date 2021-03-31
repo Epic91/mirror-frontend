@@ -14,9 +14,6 @@ const Nav = ()=> {
             <h3 className='mirror-logo'>Mirror</h3>
             </Link>
             <ul className="nav-links">
-                <Link to="/calendar" style={navstyle}>
-                    <li>Calendar</li>
-                </Link>
                 <Link to="/entries" style={navstyle}>
                     <li>Entries</li>
                 </Link>

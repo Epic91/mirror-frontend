@@ -3,7 +3,6 @@ import { Button } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 import '../CSS/EntryForm.css';
 
-
 class EditEntry extends React.Component{
         constructor(){
             super()
@@ -43,10 +42,8 @@ class EditEntry extends React.Component{
                   .then(resp => resp.json())
                   .then(newEntry => {
                       this.props.handleSubmit()
-                    //   debugger
                         this.props.updateEntry(newEntry)
                     
-                    // console.log(newEntry, '-----')
                     })
                     this.setState({
                         subject: '',

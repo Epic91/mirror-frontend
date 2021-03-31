@@ -33,7 +33,6 @@ class Login extends React.Component{
           fetch('http://localhost:3000/api/v1/auth', reqObj)
           .then(resp => resp.json())
           .then(data => {
-            console.log(data, '-----logged in-');
 
               if (data.error){
                   this.setState({
@@ -47,7 +46,6 @@ class Login extends React.Component{
                     })
 
                     this.props.history.push('/dashboard')
-                
                 }
             })
         }
@@ -88,25 +86,13 @@ class Login extends React.Component{
                             </div>
                             </form>
                         </div>
-                            {/* <Link to="/signup">
-                                <li >
-                                    Create an account
-                                </li>
-                            </Link> */}
-                
-                        </div>
-                        )
-                    }
+                    </div>
+                    )
                 }
-                
-                const mapDispatchToProps = {
-                    loginSuccess: loginSuccess
-                }
+            }
+            
+            const mapDispatchToProps = {
+                loginSuccess: loginSuccess
+            }
 
 export default connect(null, mapDispatchToProps)(Login)
-//  Successful login:
-//      -Update the backend
-//      -Clear the form 
-//      -Redirect
-//  Failed login:
-//      -errors
