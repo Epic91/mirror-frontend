@@ -1,23 +1,29 @@
 .entry-container{
     width: 1600px;
-    height: 990px;
+    height: 966px;
     background: #F5F5F5;
     margin: auto;
     padding: 35px;
-
-
 }
 
 .entry-form-header{
     font-size: 50px;
     text-align: center;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Kaushan Script', cursive;
 }
 
 .text-fields{
     margin-top: 30px;
     display: flex;
     justify-content: space-evenly;
+}
+
+.emotion-header{
+    font-size: 16px;
+}
+
+.topic-header{
+    font-size: 16px;
 }
 
 input[type=text-form], select {
@@ -43,10 +49,28 @@ input[type=text-form], select {
   }
 
 .drop-down-field{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
 
 }
 
 .form-body{
+    margin-top: 10px;
+    width: 100%;
+    height: 550px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    resize: none;
+    font-size: 16px;
+
+}
+
+.edit-body{
+    margin-top: 10px;
     width: 100%;
     height: 450px;
     padding: 12px 20px;
@@ -55,5 +79,6 @@ input[type=text-form], select {
     border-radius: 4px;
     background-color: white;
     resize: none;
+    font-size: 16px;
 
 }

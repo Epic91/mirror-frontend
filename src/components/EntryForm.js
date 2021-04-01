@@ -57,7 +57,7 @@ class EntryForm extends React.Component{
             render() {
                 return (
                     <div className='entry-container'>
-                        <h1 className='entry-form-header'>Some title here:</h1>
+                        <h1 className='entry-form-header'>Let's talk about it</h1>
                         <form className='entry-form' onSubmit={this.handleSubmit}>
                             <div className="text-fields">  
                                 <input
@@ -69,24 +69,24 @@ class EntryForm extends React.Component{
                                 />
 
                                 <input
-                                name='date'
-                                value={this.state.date}
-                                type='text-form'
-                                placeholder='Date'
-                                onChange={this.handleChange}
-                                />
-
-                                <input
                                 name='highlight'
                                 value={this.state.highlight}
                                 type='highlight'
                                 placeholder='What is one good thing that happened today? Big or small :)'
                                 onChange={this.handleChange}
                                 />
+
+                                <input
+                                name='date'
+                                value={this.state.date}
+                                type='date'
+                                placeholder='Date'
+                                onChange={this.handleChange}
+                                />
                             </div>
                             
-                            <p>How are you doing right now?</p>
                             <div className="drop-down-field">
+                            <p className='emotion-header'>How are you doing right now?</p>
                                 <select name="emotion" value={this.state.value} onChange={this.handleChange}>
                                     <option value="select">Select</option>
                                     <option value="Angry 😡">Angry 😡 </option>
@@ -101,8 +101,8 @@ class EntryForm extends React.Component{
                                 </select>
                             </div>
 
-                            <p>What is making you feel this way?</p>
                             <div className='drop-down-field'>
+                            <p className='topic-header'>What is making you feel this way?</p>
                                 <select name="topic" value={this.state.value} onChange={this.handleChange}>
                                 <option value="">Select</option>
                                 <option value="Family 🏡">Family 🏡 </option>

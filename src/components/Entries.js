@@ -46,7 +46,7 @@ class Entries extends React.Component{
       return(
         <Container>
           <Main> 
-            <h1 className="entry-header">Trip down memory lane:</h1>
+            <h1 className="entry-header">All your entries:</h1>
               <div className="entries">
                 <EntryContainer entries={this.state.entries} updateEntry={this.updateEntry} deleteEntry={this.deleteEntry}/>
               </div>

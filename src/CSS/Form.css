@@ -7,6 +7,7 @@
 .todo-form{
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
 
 /* buttons */
@@ -40,13 +41,13 @@
   display: flex;
   justify-content: center;
   font-size: 40px;
-  min-height: 10vh;
+  min-height: 5vh;
 }
 
 .todo {
   margin: .5rem;
   background: white;
-  width: 350px;
+  width: 550px;
   color: black;
   font-size: 1.2rem;
   text-align: center;

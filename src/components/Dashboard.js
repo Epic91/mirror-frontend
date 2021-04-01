@@ -5,6 +5,7 @@ import '../CSS/Dashboard.css';
 import Form from './Form'
 import TodoList from './TodoList'
 import Reflections from './Reflections'
+// import Fails from './Fails'
 
 
 function Dashboard () {
@@ -15,9 +16,10 @@ function Dashboard () {
     const [filteredTodos, setFilteredTodos] = useState([])
 
     // WHAT DID I FAIL AT THIS WEEK?
-    const [failText, setFailText] = useState ("")
-
-
+    // const [failText, setFailText] = useState ("");
+    // const [fails, setFails] = useState([]);
+    // const [failStatus, setFailStatus] = useState('all');
+    // const [filteredFails, setFilteredFails] = useState([]);
 
     useEffect(() => {
         getLocalTodos()
@@ -55,7 +57,6 @@ function Dashboard () {
         }
     };
     
-    
     return(
         <div class ='row'>
             <div class="column left">
@@ -63,33 +64,39 @@ function Dashboard () {
                 <Reflections />
             </div>
             <div class='column right'>
-            <header>
-                <h1 className='todo-header'>Ev's To-Do List:</h1>
-            </header>
-            <Form 
-            inputText={inputText}  
-            todos={todos} 
-            setTodos={setTodos} 
-            setInputText={setInputText}
-            setStatus={setStatus}
-            />
-            <TodoList 
-            filteredTodos={filteredTodos}
-            setTodos={setTodos} 
-            todos={todos}/>
+                <header>
+                    <h1 className='todo-header'>What did you fail at this week?</h1>
+                    <h3 className='todo-subheader'>"Each failure is not about the outcome but about not trying."</h3>
+                </header>
+                <Form 
+                inputText={inputText}  
+                todos={todos} 
+                setTodos={setTodos} 
+                setInputText={setInputText}
+                setStatus={setStatus}
+                />
+                <TodoList 
+                filteredTodos={filteredTodos}
+                setTodos={setTodos} 
+                todos={todos}/>
 
-
-
+                {/* <Fails 
+                failText={failText}
+                fails={fails}
+                setFails={setFails}
+                setFailText={setFailText}
+                setFailStatus={setFailStatus}
+                /> */}
             </div>
-            </div>
-            )
-        }
+        </div>
+        )
+    }
         
-        const mapStateToProps = (state) => {
-            return {
-                auth: state.auth
-            }
+    const mapStateToProps = (state) => {
+        return {
+            auth: state.auth
         }
+    }
 
 export default connect(mapStateToProps)(Dashboard)
 

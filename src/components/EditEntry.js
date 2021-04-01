@@ -66,14 +66,6 @@ class EditEntry extends React.Component{
                             placeholder={this.props.entry.subject}
                             onChange={this.handleChange}
                             />
-
-                            <input
-                            name='date'
-                            value={this.state.date}
-                            type='text-form'
-                            placeholder={this.props.entry.date}
-                            onChange={this.handleChange}
-                            />
             
                             <input
                             name='highlight'
@@ -82,10 +74,18 @@ class EditEntry extends React.Component{
                             placeholder={this.props.entry.highlight}
                             onChange={this.handleChange}
                             />
+
+                            <input
+                            name='date'
+                            value={this.state.date}
+                            type='date'
+                            placeholder={this.props.entry.date}
+                            onChange={this.handleChange}
+                            />
                         </div>
                             
-                        <p>How are you feeling?</p>
                         <div className="drop-down-field">
+                        <p>How are you feeling?</p>
                             <select name="emotion" value={this.state.value} onChange={this.handleChange}>
                                 <option value="select">Select</option>
                                 <option value="Angry 😡">Angry 😡 </option>
@@ -100,8 +100,8 @@ class EditEntry extends React.Component{
                             </select>
                         </div>
 
-                        <p>What is making you feel this way?</p>
                         <div className='drop-down-field'>
+                        <p>What is making you feel this way?</p>
                             <select name="topic" value={this.state.value} onChange={this.handleChange}>
                             <option value="">Select</option>
                             <option value="Family 🏡">Family 🏡 </option>
@@ -117,7 +117,7 @@ class EditEntry extends React.Component{
 
                         <div className="context-container">
                             <textarea
-                            className='form-body'
+                            className='edit-body'
                             name='body'
                             value={this.state.body}
                             type='text'
