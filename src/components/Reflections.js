@@ -23,7 +23,7 @@ class Reflections extends React.Component{
     render(){
         const prompts = this.state.prompts.map(prompt => 
             <Card>
-            <Card.Content description={prompt.question} />
+            <Card.Content className='innerText'description={prompt.question} />
           </Card>
             )
         return(

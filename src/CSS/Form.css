@@ -44,17 +44,22 @@
 }
 
 .todo {
-  margin: 2rem;
+  margin: .5rem;
   background: white;
+  width: 350px;
   color: black;
   font-size: 1.2rem;
+  text-align: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: all 1s ease;
-
 }
 
+
+.todo li {
+  flex: 1;
+}
 
 /* .todo-item {
   padding: 0rem 0.5rem;

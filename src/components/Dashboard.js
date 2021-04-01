@@ -55,6 +55,7 @@ function Dashboard () {
         <div class ='row'>
             <div class="column left">
                 <YouTube />
+                <Reflections />
             </div>
             <div class='column right'>
             <header>
@@ -72,7 +73,6 @@ function Dashboard () {
             setTodos={setTodos} 
             todos={todos}/>
 
-            <Reflections />
 
 
             </div>

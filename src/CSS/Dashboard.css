@@ -1,18 +1,17 @@
-
 .column {
     float: left;
     padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
+    height: 300px; 
   }
 
   .left {
     width: 30%;
-    margin-top: 100px;
+    margin-top: 40px;
   }
   
   .right {
     width: 70%;
-    height: 1000px;
+    height: 965px;
     background: #245463;
   }
 
@@ -35,4 +34,28 @@
 
 .body{
     background: crimson;
+}
+
+.yt{
+  margin-left: 40px;
+}
+
+/* REFLECTIONS */
+
+.reflection-container{
+  margin-top: 30px;
+  background: white;
+  height: 585px;
+  overflow: scroll;
+  width: 600px;
+}
+
+.reflection-div{
+  margin-left: 140px;
+}
+
+.reflection-header{
+  font-family: 'Kaushan Script', cursive;
+  text-align: center;
+  font-size: 40px;
 }
