@@ -1,7 +1,7 @@
 .login-container{
     background: white;
     width: 500px;
-    height: 600px;
+    height: 650px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -17,6 +17,7 @@
 .login-form{
     text-align: center;
     line-height: 1.8;
+    margin-top: 20px;
 
 }
 
@@ -44,16 +45,14 @@
 .pwd-text{
     font-family: 'Times New Roman', serif;
     font-size: 16px;
-
-
 }
 
-.signup-link{
+/* .signup-link{
     padding-top: 1%;
     text-align: center;
     list-style: none;
     align-items: center;
-}
+} */
 
 
 .login-button{

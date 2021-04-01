@@ -1,6 +1,6 @@
-import React from 'react'
+// import React from 'react'
 
-class SignUp extends React.Component{
+// class SignUp extends React.Component{
     // constructor(){
     //     super()
     //     this.state = {
@@ -40,18 +40,18 @@ class SignUp extends React.Component{
     //         )
     //     }
 
-        // Things to do:
-        //  -Need to somehow tell the backend that only when a user is signing up they need to use the email attribute
-        //  -Render the users dashboard
+    //     // Things to do:
+    //     //  -Need to somehow tell the backend that only when a user is signing up they need to use the email attribute
+    //     //  -Render the users dashboard
     
 
 
-    render(){
-        return(
-            <div className="login-container">
-                 {/* <h1 className="mirror-header">MIRЯOR</h1> */}
+    // render(){
+    //     return(
+    //         <div className="login-container">
+                 /* <h1 className="mirror-header">MIRЯOR</h1> 
                 
-            {/* <form className="login-form" handleSubmit={this.handleSubmit}>
+             <form className="login-form" handleSubmit={this.handleSubmit}>
                 <h1 className="sign-in-header"> Sign Up</h1>
                 <label>
                     <p>Email:</p>
@@ -90,10 +90,10 @@ class SignUp extends React.Component{
                         >Sign Up
                     </button>                
                 </div>
-            </form> */}
-            </div>
-        )
-    }
-}
+            </form> */
+//             </div>
+//         )
+//     }
+// }
 
-export default SignUp;
+// export default SignUp;

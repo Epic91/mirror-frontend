@@ -27,6 +27,7 @@ class Reflections extends React.Component{
           </Card>
             )
         return(
+
             <div className="reflection-container">
                 <h1 className="reflection-header">Reflections</h1>
                 <div className="reflection-div">

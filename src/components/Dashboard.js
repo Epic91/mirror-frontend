@@ -8,11 +8,16 @@ import Reflections from './Reflections'
 
 
 function Dashboard () {
-
+    // TODO LIST
     const [inputText, setInputText] = useState ("");
     const [todos, setTodos] =  useState([]);
     const [status, setStatus] = useState('all')
     const [filteredTodos, setFilteredTodos] = useState([])
+
+    // WHAT DID I FAIL AT THIS WEEK?
+    const [failText, setFailText] = useState ("")
+
+
 
     useEffect(() => {
         getLocalTodos()

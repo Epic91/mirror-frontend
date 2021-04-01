@@ -22,6 +22,7 @@ class Highlights extends React.Component{
     }
 
     render(){
+
         const highlights = this.state.highlights.map(highlight => 
             <Message className='message-div'size='big'>{highlight}</Message>)
         

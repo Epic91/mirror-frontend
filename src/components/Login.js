@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Link}from 'react'
 import '../CSS/Login.css';
 import { connect } from 'react-redux'
 import { loginSuccess } from '../actions/index'
@@ -84,6 +84,7 @@ class Login extends React.Component{
                             onSubmit={this.handleSubmit}
                             >Login</button>
                             </div>
+
                             </form>
                         </div>
                     </div>
