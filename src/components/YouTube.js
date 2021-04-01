@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactPlayer from "react-player"
-import '../CSS/Youtube.css';
 
 function YouTube() {
     return (
