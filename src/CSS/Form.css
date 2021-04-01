@@ -1,6 +1,6 @@
 .filter-todo{
-    width: 150px;
-    color: #dd3507;
+    width: 160px;
+    color: black;
     cursor: pointer;
 
 }
@@ -21,7 +21,7 @@
 
 .trash-btn,
 .complete-btn {
-  background: #dd3507;
+  background: #58cff3;
   color: white;
   border: none;
   padding: 1rem;
@@ -44,14 +44,15 @@
 }
 
 .todo {
-  margin: 0.5rem;
+  margin: 2rem;
   background: white;
   color: black;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: all 1s ease;
+
 }
 
 
@@ -82,12 +83,12 @@
 } */
 
 
-
-/* .fa-trash,
-.fa-plus-square,
+.fa-trash,
+/* .fa-plus-square, */
 .fa-check {
   pointer-events: none;
-} */
+
+}
 
 .completed{
   text-decoration: line-through;
@@ -103,29 +104,19 @@
 } */
 
 .todo-button{
-  color: #dd3507;
+  color: #58cff3;
   background: white;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .todo-button:hover{
-  background: #dd3507;
+  background: #58cff3;
   color: white;
 
 }
 
-.todo-item{
+.todo-item {
   min-width: 30%;
   list-style: none;
 }
-
-
-
-
-
-
-
-
-
-

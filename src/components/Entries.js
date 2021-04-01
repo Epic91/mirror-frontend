@@ -7,7 +7,7 @@ class Entries extends React.Component{
     constructor(){
         super()
         this.state = {
-            entries: [],
+            entries: []
         }
     }
 
